@@ -69,7 +69,13 @@
     // 2. Configure a search endpoint.
     Coveo.SearchEndpoint.configureCloudV2Endpoint(
         "influxdataproductionjjydv0zh",
-        "xx9df65c5f-5198-498b-88d8-42c1c746a7a2"
+        "xx9df65c5f-5198-498b-88d8-42c1c746a7a2",
+        "https://platform.cloud.coveo.com/rest/search",
+    {
+      "queryStringArguments": {
+        "searchHub": "CommunitySearch"
+      }
+    }
     );
     Coveo.init(mainPageRoot, {
       externalComponents: [
