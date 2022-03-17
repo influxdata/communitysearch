@@ -73,7 +73,7 @@
         "https://platform.cloud.coveo.com/rest/search",
     {
       "queryStringArguments": {
-        "searchHub": "CommunitySearch"
+        "searchHub": "communitySearchCoveo"
       }
     }
     );
@@ -106,7 +106,6 @@
         <div class="coveoSearch">
               <!-- Standalone search box. -->
               <div id="searchbox">
-                <div class="CoveoAnalytics" data-search-hub="CommunitySearch"></div>
                 <div class="CoveoSearchbox"></div>
               </div>
         </div>
@@ -114,6 +113,7 @@
         <!-- Main search interface, minus the search box -->
         <div id="search" class="CoveoSearchInterface" data-enable-history="true" data-excerpt-length="">
             <div class="CoveoFolding"></div>
+           <div class="CoveoAnalytics" data-search-hub="communitySearchCoveo"></div>
             <div class="coveo-tab-section">
             <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
             <div class="CoveoTab" data-id="DiscourseCommunity" data-caption="Community" data-expression="@commonsource==discourse AND NOT @communitytopic==(Staff, Meta, Lounge) AND NOT @filetype==Category AND NOT @filetype==Topic AND NOT @filetype==Category"></div>
