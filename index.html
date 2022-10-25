@@ -4,220 +4,265 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>InfluxData Community</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            background: #13002D;
-        }
-        .wrap {
-            padding: 10px;
-            padding-bottom: 5px;
-            position: relative;
-        }
-        .logo-big {
-            height: 40px;
-        }
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		.header {
+			background: #13002D;
+		}
+		.wrap {
+			padding: 10px;
+			padding-bottom: 5px;
+			position: relative;
+		}
+		.logo-big {
+			height: 40px;
+		}
 
-        .links {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: block;
-            left: 205px;
-            top: 7px;
-            position: absolute;
-            overflow: hidden;
-        }
+		.links {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			display: block;
+			left: 205px;
+			top: 7px;
+			position: absolute;
+			overflow: hidden;
+		}
 
-        .links li {
-            float: left;
-            display: inline-block;
-        }
+		.links li {
+			float: left;
+			display: inline-block;
+		}
 
-        .links li a {
-        display: block;
-        text-align: center;
-        text-decoration: none;
-        color: #fff;
-        line-height: 48px;
-        font-size: 16px;
-        font-family: Open Sans,Arial,sans-serif;
-        padding-right: 16px;
-        padding-left: 16px;
-        }
+		.links li a {
+		display: block;
+		text-align: center;
+		text-decoration: none;
+		color: #fff;
+		line-height: 48px;
+		font-size: 16px;
+		font-family: Open Sans,Arial,sans-serif;
+		padding-right: 16px;
+		padding-left: 16px;
+		}
 
-        .links li a:hover {
-            color: #4ED8A0;
-        }
+		.links li a:hover {
+			color: #4ED8A0;
+		}
 
-        .coveoSearch {
-            width:60%; margin: 0 auto; margin-bottom: 20px; margin-top: 20px;
-        }
+		.coveoSearch {
+			width:60%; margin: 0 auto; margin-bottom: 20px; margin-top: 20px;
+		}
 
-    </style>
+	</style>
   <!-- 1. Load the required resources. When in the main search page, this includes templates. -->
   <link rel="stylesheet" href="https://static.cloud.coveo.com/searchui/v2.7219/css/CoveoFullSearch.css"/>
   <script src="https://static.cloud.coveo.com/searchui/v2.7219/js/CoveoJsSearch.Lazy.min.js"></script>
   <script class="coveo-script" src="https://static.cloud.coveo.com/searchui/v2.7219/js/templates/templates.js"></script>
   <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const mainPageRoot = document.getElementById("search");
-    const searchBoxRoot = document.getElementById("searchbox");
-    // 2. Configure a search endpoint.
-    Coveo.SearchEndpoint.configureCloudV2Endpoint(
-        "influxdataproductionjjydv0zh",
-        "xx9df65c5f-5198-498b-88d8-42c1c746a7a2",
-        "https://platform.cloud.coveo.com/rest/search",
-    {
-      "queryStringArguments": {
-        "searchHub": "communitySearchCoveo"
-      }
-    }
-    );
-    Coveo.init(mainPageRoot, {
-      externalComponents: [
-        searchBoxRoot
-      ]
-    });
+	const mainPageRoot = document.getElementById("search");
+	const searchBoxRoot = document.getElementById("searchbox");
+	// 2. Configure a search endpoint.
+	Coveo.SearchEndpoint.configureCloudV2Endpoint(
+		"influxdataproductionjjydv0zh",
+		"xx9df65c5f-5198-498b-88d8-42c1c746a7a2",
+		"https://platform.cloud.coveo.com/rest/search",
+	{
+	  "queryStringArguments": {
+		"searchHub": "communitySearchCoveo"
+	  }
+	}
+	);
+	Coveo.init(mainPageRoot, {
+	  externalComponents: [
+		searchBoxRoot
+	  ]
+	});
   })
 </script>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="wrap">
-                <span>
-                    <a href="https://community.influxdata.com/" data-auto-route="true">
-                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV0AAABDCAMAAAAI/SbaAAADAFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8HPQsIAAAA/3RSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1O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' 
-                        alt="InfluxData Community" id="site-logo" class="logo-big"/>
-                    </a>
-                </span>
-                <ul class="links">
-                    <li style="margin-left: 75px;"><a href="https://www.influxdata.com/" class="nav-link">Back to InfluxData</a></li>
-                    <li><a href="https://www.influxdata.com/blog/" class="nav-link">Blog</a></li>
-                    <li><a href="https://www.influxdata.com/community-showcase/" class="nav-link">Community</a></li>
-                </ul>
-            </div>
-        </header>
-        <div>
-        <div class="coveoSearch">
-              <!-- Standalone search box. -->
-              <div id="searchbox">
-                <div class="CoveoSearchbox"></div>
-              </div>
-        </div>
+	<div class="container">
+		<header class="header">
+			<div class="wrap">
+				<span>
+					<a href="https://community.influxdata.com/" data-auto-route="true">
+						<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV0AAABDCAMAAAAI/SbaAAADAFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8HPQsIAAAA/3RSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1O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' 
+						alt="InfluxData Community" id="site-logo" class="logo-big"/>
+					</a>
+				</span>
+				<ul class="links">
+					<li style="margin-left: 75px;"><a href="https://www.influxdata.com/" class="nav-link">Back to InfluxData</a></li>
+					<li><a href="https://www.influxdata.com/blog/" class="nav-link">Blog</a></li>
+					<li><a href="https://www.influxdata.com/community-showcase/" class="nav-link">Community</a></li>
+				</ul>
+			</div>
+		</header>
+		<div>
+		<div class="coveoSearch">
+			  <!-- Standalone search box. -->
+			  <div id="searchbox">
+				<div class="CoveoSearchbox"></div>
+			  </div>
+		</div>
 
-        <!-- Main search interface, minus the search box -->
-        <div id="search" class="CoveoSearchInterface" data-enable-history="true" data-excerpt-length="">
-            <div class="CoveoFolding"></div>
-           <div class="CoveoAnalytics" data-search-hub="communitySearchCoveo"></div>
-            <div class="coveo-tab-section">
-            <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
-            <div class="CoveoTab" data-id="DiscourseCommunity" data-caption="Community" data-expression="@commonsource==discourse AND NOT @communitytopic==(Staff, Meta, Lounge) AND NOT @filetype==Category AND NOT @filetype==Topic AND NOT @filetype==Category"></div>
-            <div class="CoveoTab" data-id="Documentation" data-caption="Docs" data-expression="@source==Docs"></div>
-            <div class="CoveoTab" data-id="BlogPosts" data-caption="Blogs" data-expression="@source==Blog"></div>
-            <div class="CoveoTab" data-id="GitHubIssues" data-caption="GitHub" data-expression="@source==&quot;GitHub Issues&quot;"></div>
-            <div class="CoveoTab" data-id="TrainingResources" data-caption="Resources" data-expression="@source==Resources"></div>
-            <div class="CoveoTab" data-id="UniversityTraining" data-caption="University" data-expression="@source==University"></div>
-            <div class="CoveoTab" data-id="ResourceIntegrations" data-caption="Integrations" data-expression="@source==Integrations"></div>
-            </div>
-            <!--
-            <div class="coveo-search-section">
-            <div class="CoveoCommunityStateManager"></div>
-            </div>
-            -->
-            <div class="coveo-main-section">
-            <div class="coveo-facet-column">
-                <div class="CoveoDynamicFacet" data-title="Topic" data-field="@blogtopic" data-sort-criteria="occurrences" data-tab="BlogPosts"></div>
-                <div class="CoveoDynamicFacet" data-title="Topic" data-field="@communitytopic" data-sort-criteria="occurrences" data-tab="DiscourseCommunity"></div>
-                <div class="CoveoDynamicFacet" data-title="Solved" data-field="@has_accepted_answer" data-sort-criteria="occurrences" data-tab="DiscourseCommunity"></div>
-                <div class="CoveoDynamicFacetManager" data-enable-reorder="true">
-                <div class="CoveoDynamicFacet" data-title="GitHub Issue State" data-field="@state" data-id="issuestate" data-number-of-values="" data-tab="GitHubIssues"></div>
-                <div class="CoveoDynamicFacet" data-title="Product" data-field="@product" data-value-caption="{&quot;Select product&quot;:&quot;Misc&quot;}" data-sort-criteria="occurrences"></div>
-                <div class="CoveoDynamicFacet" data-title="Version" data-field="@version" data-number-of-values="5" data-sort-criteria="occurrences"></div>
-                <div class="CoveoDynamicFacet" data-title="Version" data-field="@version" data-number-of-values="5" data-sort-criteria="occurrences"></div>
-                <div class="CoveoDynamicFacet" data-title="Year" data-field="@year" data-sort-criteria="occurrences" data-tab="Documentation, GitHubIssues, BlogPosts, TrainingResources, UniversityTraining, ResourceIntegrations"></div>
-                </div>
-            </div>
-            <div class="coveo-results-column">
-                <div class="CoveoShareQuery"></div>
-                <div class="CoveoPreferencesPanel">
-                <div class="CoveoResultsPreferences"></div>
-                <div class="CoveoResultsFiltersPreferences"></div>
-                </div>
-                <div class="CoveoTriggers"></div>
-                <div class="CoveoBreadcrumb"></div>
-                <div class="coveo-results-header">
-                <div class="coveo-summary-section">
-                    <span class="CoveoQuerySummary"><div class="coveo-show-if-no-results"></div></span>
-                    <span class="CoveoQueryDuration"></span>
-                </div>
-                <div class="coveo-result-layout-section">
-                    <span class="CoveoResultLayout"></span>
-                </div>
-                <div class="coveo-sort-section">
-                    <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
-                    <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
-                </div>
-                </div>
-                <div class="CoveoHiddenQuery"></div>
-                <div class="CoveoDidYouMean"></div>
-                <div class="CoveoErrorReport" data-pop-up="false"></div>
-                <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true">
-                <script id="Default" class="result-template" type="text/html" data-layout="list">
-                    <div class="coveo-result-frame">
-                    <div class="coveo-result-cell" style="vertical-align:top;text-align:center;width:32px;">
-                        <span class="CoveoIcon" data-small="true" data-with-label="false"></span>
-                        <div class="CoveoQuickview"></div>
-                    </div>
-                    <div class="coveo-result-cell" style="vertical-align: top;padding-left: 16px;">
-                        <div class="coveo-result-row" style="margin-top:0;">
-                        <div class="coveo-result-cell" style="vertical-align:top;font-size:16px;" role="heading" aria-level="2">
-                            <a class="CoveoResultLink"></a>
-                        </div>
-                        <div class="coveo-result-cell" style="width:120px;text-align:right;font-size:12px">
-                            <div class="coveo-result-row">
-                            <span class="CoveoFieldValue" data-field="@date" data-helper="date"></span>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="coveo-result-row" style="margin-top:10px;">
-                        <div class="coveo-result-cell">
-                            <span class="CoveoExcerpt"></span>
-                        </div>
-                        </div>
-                        <div class="coveo-result-row" style="margin-top:10px;">
-                        <div class="coveo-result-cell">
-                            <span class="CoveoFieldValue" data-field="@author" data-text-caption="Author" style="margin-right:30px;"></span>
-                            <span class="CoveoFieldValue" data-field="@source" data-text-caption="Source" style="margin-right:30px;"></span>
-                            <span class="CoveoFieldValue" data-field="@language" data-text-caption="Language" style="margin-right:30px;"></span>
-                            <span class="CoveoFieldValue" data-field="@filetype" data-text-caption="File Type" style="margin-right:30px;"></span>
-                        </div>
-                        </div>
-                        <div class="coveo-result-row" style="margin-top:10px;">
-                        <div class="coveo-result-cell">
-                            <div class="CoveoPrintableUri"></div>
-                        </div>
-                        </div>
-                        <div class="coveo-result-row">
-                        <div class="coveo-result-cell">
-                            <div class="CoveoMissingTerms"></div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </script>
-                </div>
-                <div class="CoveoPager"></div>
-                <div class="CoveoResultsPerPage"></div>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
+		<!-- Main search interface, minus the search box -->
+		<div id="search" class="CoveoSearchInterface" data-enable-history="true" data-excerpt-length="">
+			<div class="CoveoFolding"></div>
+		   <div class="CoveoAnalytics" data-search-hub="communitySearchCoveo"></div>
+			<div class="coveo-tab-section">
+			<a class="CoveoTab" data-id="All" data-caption="All Content"></a>
+			<div class="CoveoTab" data-id="DiscourseCommunity" data-caption="Community" data-expression="@commonsource==discourse AND NOT @communitytopic==(Staff, Meta, Lounge) AND NOT @filetype==Category AND NOT @filetype==Topic AND NOT @filetype==Category"></div>
+			<div class="CoveoTab" data-id="Documentation" data-caption="Docs" data-expression="@source==Docs"></div>
+			<div class="CoveoTab" data-id="BlogPosts" data-caption="Blogs" data-expression="@source==Blog"></div>
+			<div class="CoveoTab" data-id="GitHubIssues" data-caption="GitHub" data-expression="@source==&quot;GitHub Issues&quot;"></div>
+			<div class="CoveoTab" data-id="TrainingResources" data-caption="Resources" data-expression="@source==Resources"></div>
+			<div class="CoveoTab" data-id="UniversityTraining" data-caption="University" data-expression="@source==University"></div>
+			<div class="CoveoTab" data-id="ResourceIntegrations" data-caption="Integrations" data-expression="@source==Integrations"></div>
+			</div>
+			<!--
+			<div class="coveo-search-section">
+			<div class="CoveoCommunityStateManager"></div>
+			</div>
+			-->
+			<div class="coveo-main-section">
+			<div class="coveo-facet-column">
+				<div class="CoveoDynamicFacet" data-title="Topic" data-field="@blogtopic" data-sort-criteria="occurrences" data-tab="BlogPosts"></div>
+				<div class="CoveoDynamicFacet" data-title="Topic" data-field="@communitytopic" data-sort-criteria="occurrences" data-tab="DiscourseCommunity"></div>
+				<div class="CoveoDynamicFacet" data-title="Solved" data-field="@has_accepted_answer" data-sort-criteria="occurrences" data-tab="DiscourseCommunity"></div>
+				<div class="CoveoDynamicFacetManager" data-enable-reorder="true">
+				<div class="CoveoDynamicFacet" data-title="GitHub Issue State" data-field="@state" data-id="issuestate" data-number-of-values="" data-tab="GitHubIssues"></div>
+				<div class="CoveoDynamicFacet" data-title="Product" data-field="@product" data-value-caption="{&quot;Select product&quot;:&quot;Misc&quot;}" data-sort-criteria="occurrences"></div>
+				<div class="CoveoDynamicFacet" data-title="Version" data-field="@version" data-number-of-values="5" data-sort-criteria="occurrences"></div>
+				<div class="CoveoDynamicFacet" data-title="Version" data-field="@version" data-number-of-values="5" data-sort-criteria="occurrences"></div>
+				<div class="CoveoDynamicFacet" data-title="Year" data-field="@year" data-sort-criteria="occurrences" data-tab="Documentation, GitHubIssues, BlogPosts, TrainingResources, UniversityTraining, ResourceIntegrations"></div>
+				</div>
+			</div>
+			<div class="coveo-results-column">
+				<div class="CoveoShareQuery"></div>
+				<div class="CoveoPreferencesPanel">
+				<div class="CoveoResultsPreferences"></div>
+				<div class="CoveoResultsFiltersPreferences"></div>
+				</div>
+				<div class="CoveoTriggers"></div>
+				<div class="CoveoBreadcrumb"></div>
+				<div class="coveo-results-header">
+				<div class="coveo-summary-section">
+					<span class="CoveoQuerySummary"><div class="coveo-show-if-no-results"></div></span>
+					<span class="CoveoQueryDuration"></span>
+				</div>
+				<div class="coveo-result-layout-section">
+					<span class="CoveoResultLayout"></span>
+				</div>
+				<div class="coveo-sort-section">
+					<span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+					<span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
+				</div>
+				</div>
+				<div class="CoveoHiddenQuery"></div>
+				<div class="CoveoDidYouMean"></div>
+				<div class="CoveoErrorReport" data-pop-up="false"></div>
+				<div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true">
+				<script id="Default" class="result-template" type="text/html" data-layout="list" data-field-created_at>
+					<div class="coveo-result-frame">
+					<div class="coveo-result-cell" style="vertical-align:top;text-align:center;width:32px;">
+						<span class="CoveoIcon" data-small="true" data-with-label="false"></span>
+						<div class="CoveoQuickview"></div>
+					</div>
+					<div class="coveo-result-cell" style="vertical-align: top;padding-left: 16px;">
+						<div class="coveo-result-row" style="margin-top:0;">
+						<div class="coveo-result-cell" style="vertical-align:top;font-size:16px;" role="heading" aria-level="2">
+							<a class="CoveoResultLink"></a>
+						</div>
+						<div class="coveo-result-cell" style="width:120px;text-align:right;font-size:12px">
+							<div class="coveo-result-row">
+							<span class="CoveoFieldValue" data-field="@created_at" data-helper="date"></span>
+							</div>
+						</div>
+						</div>
+						<div class="coveo-result-row" style="margin-top:10px;">
+						<div class="coveo-result-cell">
+							<span class="CoveoExcerpt"></span>
+						</div>
+						</div>
+						<div class="coveo-result-row" style="margin-top:10px;">
+						<div class="coveo-result-cell">
+							<span class="CoveoFieldValue" data-field="@author" data-text-caption="Author" style="margin-right:30px;"></span>
+							<span class="CoveoFieldValue" data-field="@source" data-text-caption="Source" style="margin-right:30px;"></span>
+							<span class="CoveoFieldValue" data-field="@language" data-text-caption="Language" style="margin-right:30px;"></span>
+							<span class="CoveoFieldValue" data-field="@filetype" data-text-caption="File Type" style="margin-right:30px;"></span>
+						</div>
+						</div>
+						<div class="coveo-result-row" style="margin-top:10px;">
+						<div class="coveo-result-cell">
+							<div class="CoveoPrintableUri"></div>
+						</div>
+						</div>
+						<div class="coveo-result-row">
+						<div class="coveo-result-cell">
+							<div class="CoveoMissingTerms"></div>
+						</div>
+						</div>
+					</div>
+					</div>
+				</script>
+				
+				<script id="ham" class="result-template" type="text/html" data-layout="list">
+					<div class="coveo-result-frame">
+					<div class="coveo-result-cell" style="vertical-align:top;text-align:center;width:32px;">
+						<span class="CoveoIcon" data-small="true" data-with-label="false"></span>
+						<div class="CoveoQuickview"></div>
+					</div>
+					<div class="coveo-result-cell" style="vertical-align: top;padding-left: 16px;">
+						<div class="coveo-result-row" style="margin-top:0;">
+						<div class="coveo-result-cell" style="vertical-align:top;font-size:16px;" role="heading" aria-level="2">
+							<a class="CoveoResultLink"></a>
+						</div>
+						<div class="coveo-result-cell" style="width:120px;text-align:right;font-size:12px">
+							<div class="coveo-result-row">
+							<span class="CoveoFieldValue" data-field="@date" data-helper="date"></span>
+							</div>
+						</div>
+						</div>
+						<div class="coveo-result-row" style="margin-top:10px;">
+						<div class="coveo-result-cell">
+							<span class="CoveoExcerpt"></span>
+						</div>
+						</div>
+						<div class="coveo-result-row" style="margin-top:10px;">
+						<div class="coveo-result-cell">
+							<span class="CoveoFieldValue" data-field="@author" data-text-caption="Author" style="margin-right:30px;"></span>
+							<span class="CoveoFieldValue" data-field="@source" data-text-caption="Source" style="margin-right:30px;"></span>
+							<span class="CoveoFieldValue" data-field="@language" data-text-caption="Language" style="margin-right:30px;"></span>
+							<span class="CoveoFieldValue" data-field="@filetype" data-text-caption="File Type" style="margin-right:30px;"></span>
+						</div>
+						</div>
+						<div class="coveo-result-row" style="margin-top:10px;">
+						<div class="coveo-result-cell">
+							<div class="CoveoPrintableUri"></div>
+						</div>
+						</div>
+						<div class="coveo-result-row">
+						<div class="coveo-result-cell">
+							<div class="CoveoMissingTerms"></div>
+						</div>
+						</div>
+					</div>
+					</div>
+				</script>
+				
+				</div>
+				<div class="CoveoPager"></div>
+				<div class="CoveoResultsPerPage"></div>
+			</div>
+			</div>
+		</div>
+		</div>
+	</div>
 </body>
 
 </html>
