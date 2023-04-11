@@ -57,7 +57,7 @@
             color: #4ED8A0;
         }
 
-        .coveoSearch {
+        .yextSearch {
             width: 60%;
             margin: 0 auto;
             margin-bottom: 20px;
@@ -65,36 +65,6 @@
         }
 
     </style>
-    <!-- 1. Load the required resources. When in the main search page, this includes templates. -->
-    <link rel="stylesheet" href="https://static.cloud.coveo.com/searchui/v2.7219/css/CoveoFullSearch.css" />
-    <script src="https://static.cloud.coveo.com/searchui/v2.7219/js/CoveoJsSearch.Lazy.min.js"></script>
-    <script class="coveo-script"
-        src="https://static.cloud.coveo.com/searchui/v2.7219/js/templates/templates.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const mainPageRoot = document.getElementById("search");
-            const searchBoxRoot = document.getElementById("searchbox");
-            // 2. Configure a search endpoint.
-            Coveo.SearchEndpoint.configureCloudV2Endpoint(
-                "influxdataproductionjjydv0zh",
-                "xx9df65c5f-5198-498b-88d8-42c1c746a7a2",
-                "https://platform.cloud.coveo.com/rest/search",
-                {
-                    "queryStringArguments": {
-                        "searchHub": "communitySearchCoveo"
-                    }
-                }
-            );
-            Coveo.init(mainPageRoot, {
-                externalComponents: [
-                    searchBoxRoot
-                ]
-            });
-        })
-    </script>
-</head>
-
-<body>
     <div class="container">
         <header class="header">
             <div class="wrap">
@@ -111,144 +81,19 @@
                 </ul>
             </div>
         </header>
-        <div>
-            <div class="coveoSearch">
-                <!-- Standalone search box. -->
-                <div id="searchbox">
-                    <div class="CoveoSearchbox"></div>
-                </div>
-            </div>
+        <div id="answers-container"></div>
+        <script src="https://3859944salesforce.supportembed.com.pagescdn.com/iframe.js"></script>
+</head>
 
-            <!-- Main search interface, minus the search box -->
-            <div id="search" class="CoveoSearchInterface" data-enable-history="true" data-excerpt-length="">
-                <div class="CoveoFolding"></div>
-                <div class="CoveoAnalytics" data-search-hub="communitySearchCoveo"></div>
-                <div class="coveo-tab-section">
-                    <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
-                    <div class="CoveoTab" data-id="DiscourseCommunity" data-caption="Community"
-                        data-expression="@commonsource==discourse AND NOT @communitytopic==(Staff, Meta, Lounge) AND NOT @filetype==Category AND NOT @filetype==Topic AND NOT @filetype==Category">
-                    </div>
-                    <div class="CoveoTab" data-id="Documentation" data-caption="Docs" data-expression="@source==Docs">
-                    </div>
-                    <div class="CoveoTab" data-id="BlogPosts" data-caption="Blogs" data-expression="@source==Blog">
-                    </div>
-                    <div class="CoveoTab" data-id="GitHubIssues" data-caption="GitHub"
-                        data-expression="@source==&quot;GitHub Issues&quot;"></div>
-                    <div class="CoveoTab" data-id="TrainingResources" data-caption="Resources"
-                        data-expression="@source==Resources"></div>
-                    <div class="CoveoTab" data-id="UniversityTraining" data-caption="University"
-                        data-expression="@source==University"></div>
-                    <div class="CoveoTab" data-id="ResourceIntegrations" data-caption="Integrations"
-                        data-expression="@source==Integrations"></div>
-                </div>
-                <!--
-			<div class="coveo-search-section">
-			<div class="CoveoCommunityStateManager"></div>
-			</div>
-			-->
-                <div class="coveo-main-section">
-                    <div class="coveo-facet-column">
-                        <div class="CoveoDynamicFacet" data-title="Topic" data-field="@blogtopic"
-                            data-sort-criteria="occurrences" data-tab="BlogPosts"></div>
-                        <div class="CoveoDynamicFacet" data-title="Topic" data-field="@communitytopic"
-                            data-sort-criteria="occurrences" data-tab="DiscourseCommunity"></div>
-                        <div class="CoveoDynamicFacet" data-title="Solved" data-field="@has_accepted_answer"
-                            data-sort-criteria="occurrences" data-tab="DiscourseCommunity"></div>
-                        <div class="CoveoDynamicFacetManager" data-enable-reorder="true">
-                            <div class="CoveoDynamicFacet" data-title="GitHub Issue State" data-field="@state"
-                                data-id="issuestate" data-number-of-values="" data-tab="GitHubIssues"></div>
-                            <div class="CoveoDynamicFacet" data-title="Product" data-field="@product"
-                                data-value-caption="{&quot;Select product&quot;:&quot;Misc&quot;}"
-                                data-sort-criteria="occurrences"></div>
-                            <div class="CoveoDynamicFacet" data-title="Version" data-field="@version"
-                                data-number-of-values="5" data-sort-criteria="occurrences"></div>
-                            <div class="CoveoDynamicFacet" data-title="Version" data-field="@version"
-                                data-number-of-values="5" data-sort-criteria="occurrences"></div>
-                            <div class="CoveoDynamicFacet" data-title="Year" data-field="@year"
-                                data-sort-criteria="occurrences"
-                                data-tab="Documentation, GitHubIssues, BlogPosts, TrainingResources, UniversityTraining, ResourceIntegrations">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="coveo-results-column">
-                        <div class="CoveoShareQuery"></div>
-                        <div class="CoveoPreferencesPanel">
-                            <div class="CoveoResultsPreferences"></div>
-                            <div class="CoveoResultsFiltersPreferences"></div>
-                        </div>
-                        <div class="CoveoTriggers"></div>
-                        <div class="CoveoBreadcrumb"></div>
-                        <div class="coveo-results-header">
-                            <div class="coveo-summary-section">
-                                <span class="CoveoQuerySummary">
-                                    <div class="coveo-show-if-no-results"></div>
-                                </span>
-                                <span class="CoveoQueryDuration"></span>
-                            </div>
-                            <div class="coveo-result-layout-section">
-                                <span class="CoveoResultLayout"></span>
-                            </div>
-                            <div class="coveo-sort-section">
-                                <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
-                                <span class="CoveoSort" data-sort-criteria="date descending,date ascending"
-                                    data-caption="Date"></span>
-                            </div>
-                        </div>
-                        <div class="CoveoHiddenQuery"></div>
-                        <div class="CoveoDidYouMean"></div>
-                        <div class="CoveoErrorReport" data-pop-up="false"></div>
-                        <div class="CoveoResultList" data-layout="list" data-wait-animation="fade"
-                            data-auto-select-fields-to-include="true">
-                            <script id="Default" class="result-template" type="text/html" data-layout="list">
-					<div class="coveo-result-frame">
-					<div class="coveo-result-cell" style="vertical-align:top;text-align:center;width:32px;">
-						<span class="CoveoIcon" data-small="true" data-with-label="false"></span>
-						<div class="CoveoQuickview"></div>
-					</div>
-					<div class="coveo-result-cell" style="vertical-align: top;padding-left: 16px;">
-						<div class="coveo-result-row" style="margin-top:0;">
-						<div class="coveo-result-cell" style="vertical-align:top;font-size:16px;" role="heading" aria-level="2">
-							<a class="CoveoResultLink"></a>
-						</div>
-						<div class="coveo-result-cell" style="width:120px;text-align:right;font-size:12px">
-							<div class="coveo-result-row">
-							<span class="CoveoFieldValue" data-field="@date" data-helper="date"></span>
-							</div>
-						</div>
-						</div>
-						<div class="coveo-result-row" style="margin-top:10px;">
-						<div class="coveo-result-cell">
-							<span class="CoveoExcerpt"></span>
-						</div>
-						</div>
-						<div class="coveo-result-row" style="margin-top:10px;">
-						<div class="coveo-result-cell">
-							<span class="CoveoFieldValue" data-field="@author" data-text-caption="Author" style="margin-right:30px;"></span>
-							<span class="CoveoFieldValue" data-field="@source" data-text-caption="Source" style="margin-right:30px;"></span>
-							<span class="CoveoFieldValue" data-field="@language" data-text-caption="Language" style="margin-right:30px;"></span>
-							<span class="CoveoFieldValue" data-field="@filetype" data-text-caption="File Type" style="margin-right:30px;"></span>
-						</div>
-						</div>
-						<div class="coveo-result-row" style="margin-top:10px;">
-						<div class="coveo-result-cell">
-							<div class="CoveoPrintableUri"></div>
-						</div>
-						</div>
-						<div class="coveo-result-row">
-						<div class="coveo-result-cell">
-							<div class="CoveoMissingTerms"></div>
-						</div>
-						</div>
-					</div>
-					</div>
-				</script>
-                        </div>
-                        <div class="CoveoPager"></div>
-                        <div class="CoveoResultsPerPage"></div>
-                    </div>
-                </div>
+<body>
+    <div>
+        <div class="yextSearch">
+            <!-- Standalone search box. -->
+            <div id="searchbox">
+                <div class="search_form"></div>
             </div>
         </div>
+    </div>
     </div>
 </body>
 
